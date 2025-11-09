@@ -6,11 +6,8 @@ from core.speak import speak
 from core.listen import listen_with_vad
 from core.commands import execute_command
 from core.config import JARVIS_ACTIVATION_PRECISION
+from core.console_handler import hide_console, show_console
 
-hwnd = ctypes.windll.kernel32.GetConsoleWindow()
-
-def hide_console(): ctypes.windll.user32.ShowWindow(hwnd, 0)
-def show_console(): ctypes.windll.user32.ShowWindow(hwnd, 5)
 
 hide_console()
 speak("Buongiorno signore, sono a sua disposizione!")
