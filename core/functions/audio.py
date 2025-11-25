@@ -3,21 +3,26 @@ import time
 from core.speak import speak
 from core.utils.logger import log
 
-def alza_volume():
+def alza_volume(gui=None):
     for _ in range(5):
         pyautogui.press("volumeup")
     speak("Volume alzato di 5%")
+    if gui: gui.add_voice("Volume alzato di 5%")
     log("Volume alzato di 5%", "INFO")
+    if gui: gui.add_log("Volume alzato di 5%", "INFO")
 
-def abbassa_volume():
+def abbassa_volume(gui=None):
     for _ in range(5):
         pyautogui.press("volumedown")
     speak("Volume abbassato di 5%")
+    if gui: gui.add_voice("Volume abbassato di 5%")
     log("Volume abbassato di 5%", "INFO")
+    if gui: gui.add_log("Volume abbassato di 5%", "INFO")
 
-def muto():
+def muto(gui=None):
     speak("Volume muto attivato")
+    if gui: gui.add_voice("Volume muto attivato")
     log("Volume muto attivato", "INFO")
+    if gui: gui.add_log("Volume muto attivato", "INFO")
     time.sleep(1.5)
     pyautogui.press("volumemute")
-
